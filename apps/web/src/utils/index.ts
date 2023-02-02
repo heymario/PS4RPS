@@ -49,7 +49,7 @@ export const sortServerFiles = (files: FileStat[]): FileStat[] => {
       .filter(item => {
         if (item.type === 'directory' && !blackList.includes(item.basename)) {
           return true;
-        } else if (item.type === 'file' && item.basename.endsWith('.pkg')) {
+        } else if (item.type === 'file' && item.basename.endsWith('.pdf')) {
           return true;
         } else {
           return false;
@@ -92,7 +92,7 @@ export const formatPkgName = (record?: FileStat, displayPkgRawTitle = false) => 
     record.basename
       .split('/')
       .pop()
-      ?.replace(/\.pkg$/i, '') || record.basename.replace(/\.pkg$/i, '');
+      ?.replace(/\.pdf$/i, '') || record.basename.replace(/\.pdf$/i, '');
   if (displayPkgRawTitle) {
     return record.paramSfo?.TITLE || formattedName;
   }
