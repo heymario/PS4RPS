@@ -49,7 +49,7 @@ export const sortServerFiles = (files: FileStat[]): FileStat[] => {
       .filter(item => {
         if (item.type === 'directory' && !blackList.includes(item.basename)) {
           return true;
-        } else if (item.type === 'file' && item.basename.endsWith('.pdf')) {
+        } else if (item.type === 'file' && （item.basename.endsWith('.pdf') || item.basename.endsWith('.ppt')) || item.basename.endsWith('.PDF') || item.basename.endsWith('.PPT')){
           return true;
         } else {
           return false;
